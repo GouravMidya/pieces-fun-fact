@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #fun-fact {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Fact About Me!</h1>
+        <button id="generate-fact">Generate Fact</button>
+        <p id="fun-fact"></p>
+    </div>
+
+    <script>
+        const funFacts = [
+            "I can code in Python!",
+            "I love to learn new things.",
+            "My favorite color is blue.",
+            "I'm a great listener.",
+            // Add more fun facts about yourself here
+        ];
+
+        const factElement = document.getElementById("fun-fact");
+        const generateButton = document.getElementById("generate-fact");
+
+        generateButton.addEventListener("click", () => {
+            const randomIndex = Math.floor(Math.random() * funFacts.length);
+            factElement.textContent = funFacts[randomIndex];
+        });
+    </script>
+</body>
+</html>
